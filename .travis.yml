@@ -1,0 +1,9 @@
+language: ruby
+before_install:
+  - rvm use $RVM --install --binary --fuzzy
+  - gem update --system
+  - gem --version
+  - gem install rubysl-bundler
+env:
+  - RVM=rbx-nightly-d21 RUBYLIB=lib
+script: bundle exec mspec spec
